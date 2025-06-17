@@ -1,59 +1,61 @@
-import { Builder, Browser, By, until } from 'selenium-webdriver';
+import { Builder, By, until } from 'selenium-webdriver';
+import chrome from 'selenium-webdriver/chrome';
+import fs from 'fs';
+import os from 'os';
+import path from 'path';
 
-
-
-
-
-(async function AbortController() {
+(async function runTest() {
+  // Get browser argument
   const args = process.argv.slice(2);
-let browser = 'chrome';
+  let browser = 'chrome';
 
-args.forEach(arg => {
-  if (arg.startsWith('--browser=')) {
-    browser = arg.split('=')[1];
-  }
-});
+  args.forEach(arg => {
+    if (arg.startsWith('--browser=')) {
+      browser = arg.split('=')[1];
+    }
+  });
 
-console.log(`Running tests in ${browser}...`);
-  // launch browser
-  let driver = new Builder().forBrowser(Browser.CHROME).build();
-  await driver.manage().window().maximize();
-  //navigate to app
-  await driver.get('https://the-internet.herokuapp.com/broken_images');
+  console.log(`Running tests in ${browser}...`);
+
+  let driver;
 
   try {
-    
-    
-     
-    await driver.wait(until.elementsLocated(By.css('img')), 5000);
-    // Check in browser if it's loaded properly
-    const container = await driver.findElement(By.id('content'));
+    if (browser === 'chrome') {
+      const userDataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'chrome-profile-'));
+      const options = new chrome.Options()
+        .addArguments('--headless')                 // headless for CI
+        .addArguments('--no-sandbox')               // required for GitHub Actions
+        .addArguments('--disable-dev-shm-usage')    // prevent crashes
+        .addArguments(`--user-data-dir=${userDataDir}`);
 
-    // ✅ Get all img elements inside the container
-    const images = await container.findElements(By.css('img'));
-
-    for (let i=0; i<`${images.length}`; i++){
-        const isBroken = await driver.executeScript(`
-          const img = arguments[0];
-          return !(img && img.complete && img.naturalWidth > 0);
-        `, images[i]);
-  
-        console.log("isBroken",isBroken);
-        
+      driver = await new Builder()
+        .forBrowser('chrome')
+        .setChromeOptions(options)
+        .build();
+    } else {
+      throw new Error('Only Chrome is supported in this script.');
     }
 
-   
+    // Navigate and test
+    await driver.get('https://the-internet.herokuapp.com/broken_images');
+
+    await driver.wait(until.elementsLocated(By.css('img')), 5000);
+    const container = await driver.findElement(By.id('content'));
+    const images = await container.findElements(By.css('img'));
+
+    for (let i = 0; i < images.length; i++) {
+      const isBroken = await driver.executeScript(`
+        const img = arguments[0];
+        return !(img && img.complete && img.naturalWidth > 0);
+      `, images[i]);
+
+      console.log(`Image ${i + 1} is ${isBroken ? 'broken' : 'ok'}`);
+    }
+  } catch (err) {
+    console.error('Error:', err);
+  } finally {
+    if (driver) {
+      await driver.quit();
+    }
   }
-  catch(err) {
-    console.log("error is: ",err);
-  }
-  finally {
-    //await driver.quit();
-    
-  }
- 
-
-
-}) ();
-
-
+})();
