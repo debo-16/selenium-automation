@@ -13,18 +13,36 @@ dotenv.config();
   //navigate to app
   await driver.get(url);
 
-  
-  
-  await driver.findElement(By.xpath('/html/body/div[1]/header/div[4]/div[3]/ul/li[2]/a')).click();
-  await driver.wait(until.elementIsVisible(driver.findElement(By.xpath('/html/body/div[1]/header/div[4]/div[3]/ul/li[2]/a'))), 500);
+  //await driver.sleep(5000);
+  //await driver.wait(until.elementIsVisible(driver.findElement(By.id('onetrust-accept-btn-handler'))), 100000);
+  //await driver.findElement(By.id('onetrust-accept-btn-handler')).click();
+  // Increase timeout to allow the cookie bar time to appear
+    //const timeout = 20000; // 20 seconds
 
+    const cookieAcceptButton = await driver.wait(
+      until.elementLocated(By.id('onetrust-accept-btn-handler')), 20000
+    );
+    await driver.wait(until.elementIsVisible(cookieAcceptButton), 5000);
+    await driver.wait(until.elementIsEnabled(cookieAcceptButton), 5000);
+    //await driver.wait(until.elementIsDisabled(cookieAcceptButton), 5000);
+    await driver.sleep(5000)
+    await cookieAcceptButton.click();
+  await driver.wait(until.elementIsVisible(driver.findElement(By.xpath('/html/body/div[1]/header/div[4]/div[3]/ul/li[2]/a'))), 5000);
+  await driver.findElement(By.xpath('/html/body/div[1]/header/div[4]/div[3]/ul/li[2]/a')).click();
+  await driver.wait(until.elementIsVisible(driver.findElement(By.xpath('/html/body/div[1]/header/div[4]/div[3]/ul/li[2]/a'))), 5000);
+  
   await driver.findElement(By.xpath('//*[@id="ShopLoginForm_Login"]')).sendKeys(email);
   await driver.findElement(By.xpath('//*[@id="ShopLoginForm_Password"]')).sendKeys(password);
   await driver.findElement(By.xpath('//*[@id="login-user-form"]/div[3]/button')).click();
-  await driver.findElement(By.id('searchTerm_Header')).sendKeys('*',Key.ENTER);
-  const selectElem = new Select(await driver.findElement(By.name('SortingAttribute')));
+  
+  
+  
+  let cookie = await driver.manage().getCookie('userID');
+  cookie ? console.log("test login passed") : console.log("test login failed");
+  //await driver.findElement(By.id('searchTerm_Header')).sendKeys('*',Key.ENTER);
+  //const selectElem = new Select(await driver.findElement(By.name('SortingAttribute')));
   //selectElem.selectByVisibleText('name ascending');
-  selectElem.selectByValue('name-desc');
-
+  //selectElem.selectByValue('name-desc');
+await driver.quit();
 
 }) ();
