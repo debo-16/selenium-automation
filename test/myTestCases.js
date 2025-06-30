@@ -1,10 +1,8 @@
 import { Builder, Browser, By, until, Key, Select } from 'selenium-webdriver';
 import dotenv from 'dotenv';
 dotenv.config();
-//import {'dotenv'} 
 
 (async function AbortController() {
-  // launch browser
   const email = process.env.EMAIL;
   const password = process.env.PASSWORD;
   const url = process.env.URL;
