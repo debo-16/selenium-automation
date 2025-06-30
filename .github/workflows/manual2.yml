@@ -28,5 +28,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Get changed test files
+      - name: Run changed Selenium tests
         run: node test/brokenImages.js --browser ${{ github.event.inputs.browser || 'chrome' }}
