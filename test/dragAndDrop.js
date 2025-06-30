@@ -4,7 +4,7 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 
-(async function dragAndDropFeature (){
+(async function dragAndDropFeature() {
   const args = process.argv.slice(2);
   let browser = 'chrome';
 
@@ -17,7 +17,7 @@ import path from 'path';
   console.log(`Running tests in ${browser}...`);
   let driver;
   
-    try {
+    
       if (browser === 'chrome') {
         const userDataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'chrome-profile-'));
         const options = new chrome.Options()
@@ -35,19 +35,13 @@ import path from 'path';
       }
     driver = new Builder().forBrowser(Browser.CHROME).build();
     await driver.get("https://the-internet.herokuapp.com/drag_and_drop");
-
-    try {
-      const blockA = await driver.findElement(By.id('column-a'));
-      const blockB = await driver.findElement(By.id('column-b'));
-      await driver.actions({async: true}).dragAndDrop(blockA,blockB).perform();
-      await driver.actions({async: true}).dragAndDrop(blockB,blockA).perform();
-      await driver.quit();
-    }
-    catch(err) {
-      console.log("error occured: ",err)
-    }
+    const blockA = await driver.findElement(By.id('column-a'));
+    const blockB = await driver.findElement(By.id('column-b'));
+    await driver.actions({async: true}).dragAndDrop(blockA,blockB).perform();
+    await driver.actions({async: true}).dragAndDrop(blockB,blockA).perform();
+    await driver.quit();
 
 
 
 
-}) ();
+  })();
