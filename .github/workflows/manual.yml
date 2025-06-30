@@ -30,4 +30,4 @@ jobs:
       run: npm install
 
     - name: Run Selenium test
-      run: node test/brokenImages.js --browser ${{ github.event.inputs.browser || 'chrome' }}
+      run: node test/dragAnddrop.js --browser ${{ github.event.inputs.browser || 'chrome' }}
