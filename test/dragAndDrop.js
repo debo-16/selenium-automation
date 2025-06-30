@@ -9,7 +9,6 @@ import { Builder, Browser, By } from "selenium-webdriver";
       const blockB = await driver.findElement(By.id('column-b'));
       await driver.actions({async: true}).dragAndDrop(blockA,blockB).perform();
       await driver.actions({async: true}).dragAndDrop(blockB,blockA).perform();
-
       await driver.quit();
     }
     catch(err) {
