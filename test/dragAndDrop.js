@@ -33,7 +33,7 @@ import path from 'path';
       } else {
         throw new Error('Only Chrome is supported in this script.');
       }
-    driver = new Builder().forBrowser(Browser.CHROME).setChromeOptions(options).build();
+    //driver = new Builder().forBrowser(Browser.CHROME).setChromeOptions(options).build();
     await driver.get("https://the-internet.herokuapp.com/drag_and_drop");
     const blockA = await driver.findElement(By.id('column-a'));
     const blockB = await driver.findElement(By.id('column-b'));
