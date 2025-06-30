@@ -36,7 +36,6 @@ import path from 'path';
       throw new Error('Only Chrome is supported in this script.');
     }
 
-    // Navigate and test
     await driver.get('https://the-internet.herokuapp.com/broken_images');
 
     await driver.wait(until.elementsLocated(By.css('img')), 5000);
