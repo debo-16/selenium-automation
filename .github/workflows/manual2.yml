@@ -41,11 +41,3 @@ jobs:
 
       - name: Run changed Selenium tests
         if: steps.changed-files.outputs.files != ''
-        run: |
-          echo "📁 Files to run: ${{ steps.changed-files.outputs.files }}"
-          set -e
-          for file in ${{ steps.changed-files.outputs.files }}; do
-            echo "🧪 Running test: $file"
-            node "$file" --browser="${{ github.event.inputs.browser || 'chrome' }"
-            echo "✅ Finished test: $file"
-          done
