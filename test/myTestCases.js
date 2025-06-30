@@ -13,18 +13,12 @@ dotenv.config();
   //navigate to app
   await driver.get(url);
 
-  //await driver.sleep(5000);
-  //await driver.wait(until.elementIsVisible(driver.findElement(By.id('onetrust-accept-btn-handler'))), 100000);
-  //await driver.findElement(By.id('onetrust-accept-btn-handler')).click();
-  // Increase timeout to allow the cookie bar time to appear
-    //const timeout = 20000; // 20 seconds
 
     const cookieAcceptButton = await driver.wait(
       until.elementLocated(By.id('onetrust-accept-btn-handler')), 20000
     );
     await driver.wait(until.elementIsVisible(cookieAcceptButton), 5000);
     await driver.wait(until.elementIsEnabled(cookieAcceptButton), 5000);
-    //await driver.wait(until.elementIsDisabled(cookieAcceptButton), 5000);
     await driver.sleep(5000)
     await cookieAcceptButton.click();
   await driver.wait(until.elementIsVisible(driver.findElement(By.xpath('/html/body/div[1]/header/div[4]/div[3]/ul/li[2]/a'))), 5000);
