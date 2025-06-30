@@ -1,6 +1,9 @@
 name: Run selenium test
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       browser:
@@ -8,9 +11,7 @@ on:
         default: 'chrome'
         required: true
         type: string
-push:
-    branches:
-      - main
+
 
 jobs:
   run-selenium:
