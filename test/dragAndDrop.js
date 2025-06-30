@@ -11,8 +11,6 @@ import { Builder, Browser, By } from "selenium-webdriver";
       await driver.actions({async: true}).dragAndDrop(blockB,blockA).perform();
 
       await driver.quit();
-
-
     }
     catch(err) {
       console.log("error occured: ",err)
