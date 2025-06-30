@@ -46,7 +46,6 @@ import path from 'path';
         const img = arguments[0];
         return !(img && img.complete && img.naturalWidth > 0);
       `, images[i]);
-
       console.log(`Image ${i + 1} is ${isBroken ? 'broken' : 'ok'}`);
     }
   } catch (err) {
