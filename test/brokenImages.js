@@ -41,7 +41,6 @@ import path from 'path';
     await driver.wait(until.elementsLocated(By.css('img')), 5000);
     const container = await driver.findElement(By.id('content'));
     const images = await container.findElements(By.css('img'));
-
     for (let i = 0; i < images.length; i++) {
       const isBroken = await driver.executeScript(`
         const img = arguments[0];
