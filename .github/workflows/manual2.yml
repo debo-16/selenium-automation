@@ -29,23 +29,4 @@ jobs:
         run: npm install
 
       - name: Get changed test files
-        id: changed-files
-        run: |
-          git fetch origin main
-          changed_files=$(git diff --name-only origin/main HEAD | grep "^test/.*\.js$" || true)
-          echo "Changed test files:"
-          echo "$changed_files"
-          # Replace newlines with spaces for safe parsing
-          changed_files="${changed_files//$'\n'/ }"
-          echo "files=$changed_files" >> $GITHUB_OUTPUT
-
-      - name: Run changed Selenium tests
-        if: steps.changed-files.outputs.files != ''
-        run: |
-          echo "📁 Files to run: ${{ steps.changed-files.outputs.files }}"
-          set -e
-          for file in ${{ steps.changed-files.outputs.files }}; do
-            echo "🧪 Running test: $file"
-            node "$file" --browser="${{ github.event.inputs.browser || 'chrome' }}"
-            echo "✅ Finished test: $file"
-          done
+        run: node test/brokenImages.js --browser ${{ github.event.inputs.browser || 'chrome' }}
