@@ -35,6 +35,7 @@ import path from 'path';
     } else {
       throw new Error('Only Chrome is supported in this script.');
     }
+    
     await driver.get('https://the-internet.herokuapp.com/broken_images');
     await driver.wait(until.elementsLocated(By.css('img')), 5000);
     const container = await driver.findElement(By.id('content'));
