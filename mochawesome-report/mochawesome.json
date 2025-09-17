@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-07-08T18:16:00.283Z",
+    "end": "2025-07-08T18:16:20.627Z",
+    "duration": 20344,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7cd67d17-4834-4e83-832e-1bafd1a00855",
+      "title": "",
+      "fullFile": "D:\\SeleniumDemo\\test\\amazon.js",
+      "file": "\\test\\amazon.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "11a04b23-62ff-4444-91c1-7daa365251d0",
+          "title": "should test the google site",
+          "fullFile": "D:\\SeleniumDemo\\test\\amazon.js",
+          "file": "\\test\\amazon.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "opens google and searches selenium",
+              "fullTitle": "should test the google site opens google and searches selenium",
+              "timedOut": true,
+              "duration": 20337,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "try {\n  console.log('🛠️ Launching Firefox...');\n  driver = await new Builder()\n    .forBrowser('firefox')\n    .setFirefoxOptions(options)\n    .setFirefoxService(service)\n    .build();\n  console.log('✅ Firefox launched.');\n  await driver.get('https://www.google.com');\n  await driver.manage().deleteCookie(\"CONSENT\");\n  await driver.manage().addCookie({\n    name: \"CONSENT\",\n    value: `YES+${new Date().toISOString().slice(0,10).replace(/-/g,\"\")}-RC1`\n  });\n  await driver.navigate().refresh();\n  const input = await driver.wait(until.elementLocated(By.css('input[name=\"q\"]')), 10000);\n  await input.sendKeys('selenium', Key.ENTER);\n  await driver.wait(until.titleContains('selenium'), 10000);\n  const title = await driver.getTitle();\n  assert.ok(title.toLowerCase().includes('selenium'));\n  console.log('✅ Test passed');\n} catch (err) {\n  console.error('❌ Test failed:', err);\n  throw err;\n} finally {\n  if (driver) await driver.quit();\n}",
+              "err": {
+                "message": "Error: Timeout of 20000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (D:\\SeleniumDemo\\test\\amazon.js)",
+                "estack": "Error: Timeout of 20000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (D:\\SeleniumDemo\\test\\amazon.js)\n    at listOnTimeout (node:internal/timers:611:17)\n    at process.processTimers (node:internal/timers:546:7)",
+                "diff": null
+              },
+              "uuid": "606ac895-7adc-4074-9b01-0bb816962c2e",
+              "parentUUID": "11a04b23-62ff-4444-91c1-7daa365251d0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "606ac895-7adc-4074-9b01-0bb816962c2e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 20337,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 20000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.5.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

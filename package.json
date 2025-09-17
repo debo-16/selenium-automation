@@ -4,17 +4,20 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --no-timeouts --parallel --reporter mochawesome --require mochawesome/register"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "chromedriver": "^136.0.3",
+    "axios": "^1.10.0",
     "dotenv": "^16.5.0",
-    "selenium-webdriver": "^4.33.0"
+    "mochawesome": "^7.1.3",
+    "selenium-webdriver": "^4.34.0"
   },
   "devDependencies": {
+    "chromedriver": "^138.0.1",
+    "geckodriver": "^5.0.0",
     "mocha": "^11.5.0"
   }
 }

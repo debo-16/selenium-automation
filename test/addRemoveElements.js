@@ -1,5 +1,5 @@
-const {Builder, Browser, By} = require('selenium-webdriver');
-const assert = require("assert");
+import { Builder, Browser,By } from "selenium-webdriver";
+import assert from 'assert';
 
 (async function AbortController() {
   // launch browser

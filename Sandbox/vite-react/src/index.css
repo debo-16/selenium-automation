@@ -1,0 +1,46 @@
+ @import "tailwindcss"; 
+/* * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: blueviolet;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-container {
+  width: 126px;
+  height: 94px;
+  border: 2px solid white;
+}
+
+.logo-container img {
+  width: 100%;
+  height: 94px;
+}
+
+.navigation-section li {
+  margin-right: 25px;
+  display: inline-flex;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+}
+
+.navigation-section {
+  margin-right: 100px;
+}
+
+.body-container {}
+
+.container {} */
+

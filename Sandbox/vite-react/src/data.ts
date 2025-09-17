@@ -1,0 +1,280 @@
+export const restaurantData = [
+  {
+    id: "1034231",
+    name: "THE FRUITINGO RESTAURANT",
+    city: "24",
+    slugs: {
+      restaurant:
+        "the-fruitingo-restaurant-crossing-republic-crossing-republic",
+      city: "noida-1",
+    },
+    cloudinaryImageId:
+      "https://blog.swiggy.com/wp-content/uploads/2025/01/Image-9_-meat-burger-1024x538.png",
+    address:
+      "Shop No : Kiosk 1  , , Floor : Sagar Plaz , Bisrakh Dadri Noida Uttar Pradesh 201306 , Sagar plaza, Sector 1, Bisrakh Jalalpur, Greater Noida, Uttar Pradesh, India",
+    locality: "Crossing Republic",
+    areaName: "Crossing Republic",
+    costForTwo: "500",
+    costForTwoMessage: "₹500 FOR TWO",
+    cuisines: ["Chinese", "Indian", "Tandoor", "Momos", "rolls"],
+    avgRating: 4.8,
+    menu: [
+      { id: 1, name: "Chole Bhature", price: 200 },
+      { id: 2, name: "Alu-Poori(4 piece)", price: 400 },
+      { id: 3, name: "Kachauri(2 piece)", price: 100 },
+    ],
+  },
+  {
+    id: "12532",
+    name: "Kamboj Restaurant",
+    city: "10459",
+    slugs: {
+      restaurant: "kamboj-restaurant-golf-course",
+      city: "noida-1",
+    },
+    cloudinaryImageId:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnYzt7esnQhMsKocvi7E9LP46KH8_SzfcS4piubvev622KiugEy9blWcaFYJqBnxl5e58&usqp=CAU",
+    address:
+      "Sharma Market, Sector 37, Near Arun Vihar Community Centre Club, Noida",
+    locality: "Sector 37",
+    areaName: "Sector 37",
+    costForTwo: "60000",
+    costForTwoMessage: "₹600 FOR TWO",
+    cuisines: ["North Indian", "Mughlai", "Chinese", "Beverages", "Tandoor"],
+    avgRating: 4.3,
+    menu: [
+      { id: 11, name: "Chicken Biryani", price: 200 },
+      { id: 12, name: "Mix Biryani", price: 300 },
+      { id: 13, name: "Veg Biryani", price: 400 },
+      { id: 14, name: "Paneer Biryani", price: 100 },
+    ],
+  },
+  {
+    id: "719036",
+    name: "The Street View Restaurant",
+    city: "10459",
+    slugs: {
+      restaurant: "the-street-view-restaurant-golf-course-golf-course",
+      city: "noida-1",
+    },
+    cloudinaryImageId:
+      "https://media.assettype.com/thenewsminute%2Fimport%2Fsites%2Fdefault%2Ffiles%2FSouth_breakfast.jpg?w=480&auto=format%2Ccompress&fit=max",
+    address:
+      "Shop no -1 Maroon apartment Street no  -3 Near A square mall Sector 73 Noida,  SECTOR-73 NOIDA, NOIDA CITY ZONE-4,  Gautam Buddha Nagar , Uttar Pradesh -  201301",
+    locality: "Gautam Buddha Nagar",
+    areaName: "Sector 71",
+    costForTwo: "29900",
+    costForTwoMessage: "₹299 FOR TWO",
+    cuisines: [
+      "North Indian",
+      "Chinese",
+      "Tandoor",
+      "Biryani",
+      "Snacks",
+      "Thalis",
+    ],
+    avgRating: 4.2,
+    menu: [
+      { id: 21, name: "Gol Gappe", price: 200 },
+      { id: 22, name: "Alu Tikki", price: 300 },
+      { id: 23, name: "Bhel Puri", price: 400 },
+      { id: 24, name: "Papri Chaat", price: 100 },
+    ],
+  },
+  {
+    id: "54383",
+    name: "Bengali Restaurant",
+    city: "10459",
+    slugs: {
+      restaurant: "bengali-restaurant-sector-34-golf-course",
+      city: "noida-1",
+    },
+    cloudinaryImageId:
+      "https://recipesblob.oetker.in/assets/2d2a87f7533e439aa3e6ed9bd63656e7/1272x764/tandoori-pizza.webp",
+    address: "Cm 30 sector 122 noida",
+    locality: "Sector 72",
+    areaName: "Sector 72",
+    costForTwo: "20000",
+    costForTwoMessage: "₹200 FOR TWO",
+    cuisines: ["Bengali", "Biryani", "Mughlai", "Seafood"],
+    avgRating: 3.9,
+    menu: [
+      { id: 31, name: "Macher Jhol Bhaat", price: 200 },
+      { id: 32, name: "Fish Fry", price: 300 },
+      { id: 33, name: "Fish Cutlet", price: 400 },
+      { id: 34, name: "Fish Kobiraji", price: 100 },
+    ],
+  },
+  {
+    id: "1004300",
+    name: "Old Shiva Da Dhaba",
+    city: "24",
+    slugs: {
+      restaurant: "old-shiva-da-dhaba-crossing-republic-crossing-republic-2",
+      city: "noida-1",
+    },
+    cloudinaryImageId:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRL0ZIsc0tq31HxEXjcHqZR0epv1jugHEzZzGJ2hkWgrqhZX3bMxNgtKwsP8M5yQM6g3Q&usqp=CAU",
+    address:
+      "Shop No : SHOP NO -01 , Floor :  , JS COMPLEX,CHATURBHUJ  CHOWK , SECTOR-2, GREA , ",
+    locality: "Gaur City 1",
+    areaName: "Eco tect fast society",
+    costForTwo: "25000",
+    costForTwoMessage: "₹250 FOR TWO",
+    cuisines: [
+      "North Indian",
+      "Chinese",
+      "Fast Food",
+      "Momos",
+      "Barbecue",
+      "Indian",
+      "Thali",
+      "Raita",
+      "paratha",
+      "Pasta",
+    ],
+    avgRating: 4.1,
+    menu: [
+      { id: 41, name: "Rajma Chawal", price: 200 },
+      { id: 42, name: "Paneer Butter Masala", price: 300 },
+      { id: 43, name: "Butter Naan", price: 100 },
+      { id: 44, name: "Mixed Veg", price: 150 },
+    ],
+  },
+  {
+    id: "1034231-1",
+    name: "THE BINGE",
+    city: "24",
+    slugs: {
+      restaurant:
+        "the-fruitingo-restaurant-crossing-republic-crossing-republic",
+      city: "noida-1",
+    },
+    cloudinaryImageId:
+      "https://blog.swiggy.com/wp-content/uploads/2025/01/Image-9_-meat-burger-1024x538.png",
+    address:
+      "Shop No : Kiosk 1  , , Floor : Sagar Plaz , Bisrakh Dadri Noida Uttar Pradesh 201306 , Sagar plaza, Sector 1, Bisrakh Jalalpur, Greater Noida, Uttar Pradesh, India",
+    locality: "Crossing Republic",
+    areaName: "Crossing Republic",
+    costForTwo: "500",
+    costForTwoMessage: "₹500 FOR TWO",
+    cuisines: ["Tandoor", "Indonesian", "thai"],
+    avgRating: 4.8,
+    menu: [
+      { id: 51, name: "Tandoori Chaap", price: 200 },
+      { id: 52, name: "Malai Chaap", price: 300 },
+      { id: 53, name: "Tandoori Naan", price: 400 },
+      { id: 54, name: "Missi Roti", price: 100 },
+    ],
+  },
+  {
+    id: "12532-2",
+    name: "The Bong Connect",
+    city: "10459",
+    slugs: {
+      restaurant: "kamboj-restaurant-golf-course",
+      city: "noida-1",
+    },
+    cloudinaryImageId:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnYzt7esnQhMsKocvi7E9LP46KH8_SzfcS4piubvev622KiugEy9blWcaFYJqBnxl5e58&usqp=CAU",
+    address:
+      "Sharma Market, Sector 37, Near Arun Vihar Community Centre Club, Noida",
+    locality: "Electronic City Noida",
+    areaName: "Sector 37",
+    costForTwo: "60000",
+    costForTwoMessage: "₹600 FOR TWO",
+    cuisines: ["Bengali", "South-Indian", "Beverages"],
+    avgRating: 4.3,
+    menu: [
+      { id: 61, name: "Lachha Paratha", price: 200 },
+      { id: 62, name: "Chur Chur Naan", price: 300 },
+      { id: 63, name: "Veg Biryani", price: 400 },
+      { id: 64, name: "Paneer Biryani", price: 100 },
+    ],
+  },
+  {
+    id: "719036-3",
+    name: "Sub way",
+    city: "10459",
+    slugs: {
+      restaurant: "the-street-view-restaurant-golf-course-golf-course",
+      city: "noida-1",
+    },
+    cloudinaryImageId:
+      "https://media.assettype.com/thenewsminute%2Fimport%2Fsites%2Fdefault%2Ffiles%2FSouth_breakfast.jpg?w=480&auto=format%2Ccompress&fit=max",
+    address:
+      "Shop no -1 Maroon apartment Street no  -3 Near A square mall Sector 73 Noida,  SECTOR-73 NOIDA, NOIDA CITY ZONE-4,  Gautam Buddha Nagar , Uttar Pradesh -  201301",
+    locality: "Gautam Buddha Nagar",
+    areaName: "Sector 54",
+    costForTwo: "29900",
+    costForTwoMessage: "₹299 FOR TWO",
+    cuisines: ["salads", "shakes", "burgers", "tacos"],
+    avgRating: 4.2,
+    menu: [
+      { id: 71, name: "Lachha Paratha", price: 200 },
+      { id: 72, name: "Chur Chur Naan", price: 300 },
+      { id: 73, name: "Veg Biryani", price: 400 },
+      { id: 74, name: "Paneer Biryani", price: 100 },
+    ],
+  },
+  {
+    id: "54383-4",
+    name: "The Grill",
+    city: "10459",
+    slugs: {
+      restaurant: "bengali-restaurant-sector-34-golf-course",
+      city: "noida-1",
+    },
+    cloudinaryImageId:
+      "https://recipesblob.oetker.in/assets/2d2a87f7533e439aa3e6ed9bd63656e7/1272x764/tandoori-pizza.webp",
+    address: "Cm 30 sector 122 noida",
+    locality: "Sector 72",
+    areaName: "Sector 72",
+    costForTwo: "20000",
+    costForTwoMessage: "₹200 FOR TWO",
+    cuisines: ["Grilled", "Tandoori", "North-Indian", "Sea-food"],
+    avgRating: 3.9,
+    menu: [
+      { id: 81, name: "Lachha Paratha", price: 200 },
+      { id: 82, name: "Chur Chur Naan", price: 300 },
+      { id: 83, name: "Veg Biryani", price: 400 },
+      { id: 84, name: "Paneer Biryani", price: 100 },
+    ],
+  },
+  {
+    id: "1004300-5",
+    name: "Burrahh the  Dhaba",
+    city: "24",
+    slugs: {
+      restaurant: "old-shiva-da-dhaba-crossing-republic-crossing-republic-2",
+      city: "noida-1",
+    },
+    cloudinaryImageId:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRL0ZIsc0tq31HxEXjcHqZR0epv1jugHEzZzGJ2hkWgrqhZX3bMxNgtKwsP8M5yQM6g3Q&usqp=CAU",
+    address:
+      "Shop No : SHOP NO -01 , Floor :  , JS COMPLEX,CHATURBHUJ  CHOWK , SECTOR-2, GREA , ",
+    locality: "Sector 62",
+    areaName: "Eco tect fast society",
+    costForTwo: "25000",
+    costForTwoMessage: "₹250 FOR TWO",
+    cuisines: [
+      "North Indian",
+      "Chinese",
+      "Fast Food",
+      "Momos",
+      "Barbecue",
+      "Indian",
+      "Thali",
+      "Raita",
+      "paratha",
+      "Pasta",
+    ],
+    avgRating: 4.1,
+    menu: [
+      { id: 91, name: "Daal Makhani", price: 200 },
+      { id: 92, name: "Paneer Lababdar", price: 300 },
+      { id: 93, name: "Kurkure Bhindi", price: 400 },
+      { id: 94, name: "Jeera Rice", price: 100 },
+    ],
+  },
+];
